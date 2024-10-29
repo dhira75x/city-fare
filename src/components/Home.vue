@@ -103,13 +103,30 @@
           </p>
         </div>
 
-        <section class="text-center p-10 flex flex-row justify-center">
+        <section
+          class="text-center pl-56 pr-56 flex flex-col justify-center gap-4"
+        >
           <div>
-            <label class="text-sm font-semibold">Name:</label>
+            <label class="text-sm font-semibold justify-start pr-[650px]"
+              >Your Full Name:</label
+            >
             <input
-              class="mt-1 block w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
+              class="ml-1 mt-2 w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
+              placeholder="Example Sample"
             />
           </div>
+          <div class="pb-3">
+            <label class="text-sm font-semibold justify-start pr-[650px]"
+              >Email Address:</label
+            >
+            <input
+              class="ml-1 mt-2 w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <button class="bg-[#2B2626] py-2 px-4 text-white rounded-full">
+            Submit
+          </button>
         </section>
       </div>
     </section>
