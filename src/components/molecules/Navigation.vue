@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-[#2B2626]">
+  <nav class="bg-[#2B2626] sticky top-0 z-50">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -9,6 +9,7 @@
             class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu"
             aria-expanded="false"
+            @click="toggleMobileMenu"
           >
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
@@ -46,40 +47,44 @@
         <div
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
-          <div class="flex flex-shrink-0 items-center">
-            <img class="h-8 w-8 bg-white" src="/logo.svg" alt="Your Company" />
+          <div class="flex flex-shrink-0 items-center cursor-pointer">
+            <a href="/"><img class="h-8 w-38" src="/logo.svg" alt="Your Company" /></a>
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <a
-                href="/"
-                class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                @click="$emit('scroll-to', 'hero')"
+                class="rounded-md  cursor-pointer px-3 py-2 text-sm font-medium text-white"
                 aria-current="page"
                 >Home</a
               >
               <a
-                href=""
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >About</a
+              @click="$emit('scroll-to', 'howItWorks')"
+                class="rounded-md px-3 py-2 text-sm font-medium cursor-pointer  text-gray-300 hover:bg-gray-700 hover:text-white"
+                >How It Works</a
               >
               <a
-                href=""
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="$emit('scroll-to', 'packages')"
+                class="rounded-md px-3 py-2 text-sm font-medium cursor-pointer  text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Packages</a
+              >
+              <!-- <a
+               @click="$emit('scroll-to', 'contact')"
+                class="rounded-md px-3 py-2 text-sm font-medium cursor-pointer  text-gray-300 hover:bg-gray-700 hover:text-white"
                 >Contact Us</a
-              >
+              > -->
               <a
-                href=""
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >How it Works</a
+                href="/terms-of-engagement"
+                class="rounded-md px-3 py-2 text-sm font-medium cursor-pointer  text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Terms of Engagement</a
               >
             </div>
           </div>
         </div>
 
-        <div
+        <!-- <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
-          <!-- Notification Icon with Badge -->
           <div class="relative">
             <button
               @click="toggleNotifications"
@@ -108,7 +113,6 @@
                 ></circle>
               </svg>
 
-              <!-- Notification Badge -->
               <span
                 v-if="unreadMessages > 0"
                 class="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white"
@@ -117,7 +121,6 @@
               </span>
             </button>
 
-            <!-- Dropdown Messages -->
             <div
               v-show="isNotificationsOpen"
               @click.away="isNotificationsOpen = false"
@@ -133,7 +136,6 @@
             </div>
           </div>
 
-          <!-- Profile dropdown -->
           <div class="relative ml-3">
             <button
               @click="toggleProfileDropdown"
@@ -147,8 +149,6 @@
               <span class="sr-only">Open user menu</span>
               Sign Up
             </button>
-
-            <!-- Conditionally render the profile dropdown -->
             <div
               v-show="isProfileDropdownOpen"
               @click.away="isProfileDropdownOpen = false"
@@ -178,40 +178,45 @@
               >
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <!-- Mobile menu -->
-    <div class="sm:hidden" id="mobile-menu">
+    <div v-if="isMobileMenuOpen" class="sm:hidden" id="mobile-menu" >
       <div class="space-y-1 px-2 pb-3 pt-2">
         <a
-          href="/"
-          class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+        @click="$emit('scroll-to', 'hero')"
+          class="block rounded-md hover:bg-gray-900 px-3 cursor-pointer  py-2 text-base font-medium text-white"
           aria-current="page"
           >Home</a
         >
         <a
-          href="/"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >About</a
-        >
-        <a
-          href="/"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >Contact</a
-        >
-        <a
-          href="/"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+        @click="$emit('scroll-to', 'howItWorks')"
+          class="block rounded-md px-3 cursor-pointer  py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
           >How it Works</a
         >
+        <a
+        @click="$emit('scroll-to', 'packages')"
+          class="block rounded-md px-3 cursor-pointer  py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Packages</a
+        >
+        <!-- <a
+        @click="$emit('scroll-to', 'contact')"
+          class="block rounded-md cursor-pointer  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Contact</a
+        > -->
+        
+        <a href="/terms-of-engagement" class="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+              Terms of Engagement</a
+          >
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
+import { openBlock } from "vue";
 import { ref } from "vue";
 
 // Notification data
@@ -231,6 +236,11 @@ const toggleNotifications = () => {
 const isProfileDropdownOpen = ref(false);
 const toggleProfileDropdown = () => {
   isProfileDropdownOpen.value = !isProfileDropdownOpen.value;
+};
+// Mobile menu state
+const isMobileMenuOpen = ref(false);
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
 
 // Dummy data for unread messages badge
