@@ -1,17 +1,20 @@
 <template>
-  <Header />
+  <Header @scroll-to="scrollToSection" />
   <div class="landing-page">
     <!-- Hero Section -->
-    <section
-      class="hero flex flex-col items-center justify-between md:pb-6 md:pt-16"
-    >
+    <section ref="heroSection" class="hero flex flex-col items-center justify-between md:pb-6 md:pt-16" style="background-image: url('/background.svg');" >
       <div class="hero-content w-full flex flex-row pl-4">
         <div class="sm:w-3/6">
-          <h1 class="text-5xl font-bold mb-4 text-black font-sans">
+          <h1 class="text-2xl md:text-5xl font-bold mb-4 text-black font-sans">
             Reliable Intra City Transport for Your Daily Commute and Special
             Events
           </h1>
-          <p class="text-xl mb-6 text-slate-600">
+          <img
+          src="/phones.svg"
+          alt="Mobile Device"
+          class="w-[1000px] h-[480px] pl-20 md:hidden"
+        />
+          <p class="text-xl mb-6 text-slate-200">
             Connecting Businesses and People with Efficient and Affordable
             Transport Solutions.
           </p>
@@ -20,7 +23,7 @@
         <img
           src="/phones.svg"
           alt="Mobile Device"
-          class="w-[1000px] h-[480px] pl-20"
+          class="w-[1000px] h-[480px] pl-20 hidden md:block"
         />
       </div>
       <div class="flex flex-row gap-4 md:pt-8 lg:pr-[600px]">
@@ -33,9 +36,7 @@
       </div>
     </section>
 
-    <section
-      class="hero flex flex-col items-center justify-between md:pt-4 sm:w-full"
-    >
+    <section ref="howItWorksSection" class="hero flex flex-col items-center justify-between md:pt-4 sm:w-full">
       <div class="hero-content w-full flex flex-col">
         <img src="/howitworks.svg" alt="How it works" class="w-full h-full" />
       </div>
@@ -47,9 +48,7 @@
       </div>
     </section>
 
-    <section
-      class="hero flex flex-col items-center justify-between md:pb-12 md:pt-16 bg-[#2B2626] text-slate-600"
-    >
+    <section ref="packagesSection" class="hero flex flex-col items-center justify-between md:pb-12 md:pt-16 bg-[#2B2626] text-slate-600">
       <div class="hero-content w-full flex flex-col pl-4">
         <div class="sm:w-full text-center flex flex-col justify-center">
           <h1 class="text-5xl font-bold mb-4 text-white font-sans">
@@ -71,25 +70,19 @@
             >
               <h3 class="text-xl font-semibold mb-2">{{ pkg.name }}</h3>
               <p class="mb-4">{{ pkg.description }}</p>
-              <button
+              <!-- <button
                 @click="viewPackage(pkg.id)"
                 class="view-button text-Black border border-yellow-500 py-1 px-3 rounded transition hover:bg-yellow-500 hover:text-white"
               >
                 View Package
-              </button>
+              </button> -->
             </div>
           </div>
         </section>
       </div>
-      <div class="flex flex-row gap-4 md:pt-12">
-        <button @click="" class="cta-button text-white transition">
-          <img src="/google.svg" alt="Google App" />
-        </button>
-        <button @click="" class="cta-button text-white transition">
-          <img src="/apple.svg" alt="Google App" />
-        </button>
-      </div>
+     
     </section>
+<<<<<<< HEAD
     <section
       class="hero flex flex-col items-center justify-between md:pb-12 md:pt-16 bg-[#D7AE18] text-slate-600"
     >
@@ -131,6 +124,9 @@
       </div>
     </section>
 
+=======
+    
+>>>>>>> 5ae23c616b60e677e753d68414bb51f8a38488ac
     <!-- Call to Action -->
     <section class="cta-section bg-[#2B2626] text-white text-center p-10">
       <h2 class="text-3xl font-semibold mb-4">
@@ -140,15 +136,21 @@
         Sign up to view transportation routes and get personalized
         recommendations!
       </p>
-      <button
-        @click="signup"
+        <button @click="" class="cta-button text-white transition">
+          <img src="/google.svg" alt="Google App" />
+        </button>
+        <button @click="" class="cta-button text-white transition">
+          <img src="/apple.svg" alt="Google App" />
+        </button>
+      <!-- <button
+        @click="scrollToSection('packagesSection')"
         class="signup-button bg-white text-[#2B2626] py-2 px-4 rounded transition hover:bg-gray-100"
       >
         Sign Up Now
-      </button>
+      </button> -->
     </section>
     <section class="cta-section bg-[#666565] text-white text-center p-2">
-      <p class="">© Made With Love By CityFare All Right Reserved</p>
+      <p class="">© All Right Reserved -  CityFare </p>
     </section>
   </div>
 </template>
@@ -159,6 +161,24 @@ import Header from "./molecules/Navigation.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+
+const heroSection = ref(null);
+const howItWorksSection = ref(null);
+const packagesSection = ref(null);
+const contactSection = ref(null);
+
+const scrollToSection = (section) => {
+  const sectionRefs = {
+    hero: heroSection,
+    howItWorks: howItWorksSection,
+    packages: packagesSection,
+    contact: contactSection,
+  };
+
+  if (sectionRefs[section].value) {
+    sectionRefs[section].value.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
 const featuredPackages = ref([
   {
