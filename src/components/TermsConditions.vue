@@ -2,7 +2,6 @@
     <section class="terms-conditions p-6">
       <section class="terms-section text-left px-4 py-8">
   <h2 class="text-3xl font-bold mb-4">Terms and Conditions for Cityfare App</h2>
-  <p class="text-md text-gray-600 mb-4">Effective Date: [Auto generated]</p>
   <p class="text-lg mb-4">
     These Terms and Conditions ("Terms") govern your use of the Cityfare mobile application (the "App"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, you may not use the App.
   </p>

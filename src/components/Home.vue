@@ -2,7 +2,7 @@
   <Header @scroll-to="scrollToSection" />
   <div class="landing-page">
     <!-- Hero Section -->
-    <section ref="heroSection" class="hero flex flex-col items-center justify-between md:pb-6 md:pt-16">
+    <section ref="heroSection" class="hero flex flex-col items-center justify-between md:pb-6 md:pt-16" style="background-image: url('/background.svg');" >
       <div class="hero-content w-full flex flex-row pl-4">
         <div class="sm:w-3/6">
           <h1 class="text-2xl md:text-5xl font-bold mb-4 text-black font-sans">
@@ -14,7 +14,7 @@
           alt="Mobile Device"
           class="w-[1000px] h-[480px] pl-20 md:hidden"
         />
-          <p class="text-xl mb-6 text-slate-600">
+          <p class="text-xl mb-6 text-slate-200">
             Connecting Businesses and People with Efficient and Affordable
             Transport Solutions.
           </p>
@@ -80,37 +80,9 @@
           </div>
         </section>
       </div>
-      <div class="flex flex-row gap-4 md:pt-12">
-        <button @click="" class="cta-button text-white transition">
-          <img src="/google.svg" alt="Google App" />
-        </button>
-        <button @click="" class="cta-button text-white transition">
-          <img src="/apple.svg" alt="Google App" />
-        </button>
-      </div>
+     
     </section>
-    <!-- <section ref="contactSection" class="hero flex flex-col items-center justify-between md:pb-12 md:pt-16 bg-[#D7AE18] text-slate-600">
-      <div class="hero-content w-full flex flex-col pl-4">
-        <div class="sm:w-full text-center flex flex-col justify-center">
-          <h1 class="text-5xl font-bold mb-4 text-white font-sans">
-            Contact Us
-          </h1>
-          <p class="text-xl mb-6 text-slate-100">
-            Looking to book a ride tailored to your specific needs? Get in Touch
-          </p>
-        </div>
-
-        <section class="text-center p-10 flex flex-row justify-center">
-          <div>
-            <label class="text-sm font-semibold">Name:</label>
-            <input
-              class="mt-1 block w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
-            />
-          </div>
-        </section>
-      </div>
-    </section> -->
-
+    
     <!-- Call to Action -->
     <section class="cta-section bg-[#2B2626] text-white text-center p-10">
       <h2 class="text-3xl font-semibold mb-4">
@@ -120,12 +92,18 @@
         Sign up to view transportation routes and get personalized
         recommendations!
       </p>
-      <button
-        @click="scrollToSection('packages')"
+        <button @click="" class="cta-button text-white transition">
+          <img src="/google.svg" alt="Google App" />
+        </button>
+        <button @click="" class="cta-button text-white transition">
+          <img src="/apple.svg" alt="Google App" />
+        </button>
+      <!-- <button
+        @click="scrollToSection('packagesSection')"
         class="signup-button bg-white text-[#2B2626] py-2 px-4 rounded transition hover:bg-gray-100"
       >
         Sign Up Now
-      </button>
+      </button> -->
     </section>
     <section class="cta-section bg-[#666565] text-white text-center p-2">
       <p class="">© All Right Reserved -  CityFare </p>

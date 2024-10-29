@@ -4,7 +4,6 @@
 <section class="policy-section text-left px-4 py-8">
   <h2 class="text-3xl font-bold mb-4">Cityfare Privacy Policy Document</h2>
   <h3 class="text-2xl font-bold mb-2">Privacy Policy for Cityfare App</h3>
-  <p class="text-md text-gray-600 mb-4">Effective Date: [Auto generated]</p>
   <p class="text-lg mb-4">
     Cityfare (the "App") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Cityfare mobile application. By using the App, you agree to the collection and use of information in accordance with this policy.
   </p>
