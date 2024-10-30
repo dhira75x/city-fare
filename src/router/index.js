@@ -23,6 +23,11 @@ const router = createRouter({
       name: "package-detail",
       component: () => import("../components/packageDetails.vue"),
     },
+    {
+      path: "/delete-account",
+      name: "delete-account",
+      component: () => import("../components/DeleteAccount.vue"),
+    },
   ],
 });
 
