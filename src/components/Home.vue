@@ -82,7 +82,51 @@
       </div>
      
     </section>
+<<<<<<< HEAD
+    <section
+      class="hero flex flex-col items-center justify-between md:pb-12 md:pt-16 bg-[#D7AE18] text-slate-600"
+    >
+      <div class="hero-content w-full flex flex-col pl-4">
+        <div class="sm:w-full text-center flex flex-col justify-center">
+          <h1 class="text-5xl font-bold mb-4 text-white font-sans">
+            Contact Us
+          </h1>
+          <p class="text-xl mb-6 text-slate-100">
+            Looking to book a ride tailored to your specific needs? Get in Touch
+          </p>
+        </div>
+
+        <section
+          class="text-center pl-56 pr-56 flex flex-col justify-center gap-4"
+        >
+          <div>
+            <label class="text-sm font-semibold justify-start pr-[650px]"
+              >Your Full Name:</label
+            >
+            <input
+              class="ml-1 mt-2 w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
+              placeholder="Example Sample"
+            />
+          </div>
+          <div class="pb-3">
+            <label class="text-sm font-semibold justify-start pr-[650px]"
+              >Email Address:</label
+            >
+            <input
+              class="ml-1 mt-2 w-full border border-gray-300 p-2 focus:outline-primary rounded-full"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <button class="bg-[#2B2626] py-2 px-4 text-white rounded-full">
+            Submit
+          </button>
+        </section>
+      </div>
+    </section>
+
+=======
     
+>>>>>>> 5ae23c616b60e677e753d68414bb51f8a38488ac
     <!-- Call to Action -->
     <section class="cta-section bg-[#2B2626] text-white text-center p-10">
       <h2 class="text-3xl font-semibold mb-4">
